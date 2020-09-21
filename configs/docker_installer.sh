@@ -32,4 +32,3 @@ sudo usermod -aG docker ${USER}
 echo "Adicionando mudanças"
 newgrp docker
 echo "Criar certificado 1"
-

@@ -1,0 +1,30 @@
+// Verificar se o cluster esta criado corretamente
+kubectl get nodes
+// Criar um novo pode com uma imagems
+kubectl run nginx-pod --image=nginx:latest
+// Ver qual os pods estão rodando
+kubectl get pods
+// Acompanhar a criação dos pods
+kubectl get pods --watch
+// Ver informações sobre o pod
+kubectl describe pod nginx-pod
+Exemplo de events:
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  3m30s  default-scheduler  Successfully assigned default/nginx-pod to ubuntu-bionic
+  Normal  Pulling    3m28s  kubelet            Pulling image "nginx:latest"
+  Normal  Pulled     3m2s   kubelet            Successfully pulled image "nginx:latest" in 26.180895895s
+  Normal  Created    3m     kubelet            Created container nginx-pod
+  Normal  Started    3m     kubelet            Started container nginx-pod
+// Editar um POD
+kubectl edit pod nginx-pod
+// Aplicar um pod à partir de um arquivo yaml
+kubectl apply -f ./primeiro-pod.yaml
+// Excluir um pod pelo nome do pod
+kubectl delete pod nginx-pod
+// Excluir um pod pelo arquivo
+kubectl delete -f ./primeiro-pod.yaml
+// Executar comandos no pod (igual é possível fazer no docker com docker exec
+kubectl exec -it portal-noticias -- bash
+
