@@ -11,3 +11,5 @@ kubectl get svc
 // NodePort abre a comunicação para o mundo exterior
 // Para definir um NodePort é possível usar um valor entre 30000 e 32767
 // Com o LoadBalancer já é usado o balanceador padrão do cloud provider (exemplo google cloud platform).
+// Deletar todos serviços
+kubectl delete svc --all
