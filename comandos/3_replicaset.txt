@@ -1,0 +1,23 @@
+// Para criar um replicaset
+kubectl apply -f 4_replicas_set/portal-noticias-replicaset.yaml
+// Para listar replicasets
+kubectl get replicasets
+kubectl get rs
+// Para assistir replicaset
+kubectl get rs --watch
+// Para criar um deployment
+kubectl apply -f 4_replicaset_deployment/nginx-deployment.yaml
+// Para listar deployments
+kubectl get deployments
+// Ver historico do deployment
+kubectl rollout history deployment nginx-deployment
+// Incluir deployment incluindo com historico
+kubectl apply -f 4_replicaset_deployment/nginx-deployment.yaml  --record
+// Anotando o histórico do deployment
+kubectl annotate deployment nginx-deployment kubernetes.io/change-cause="Definindo a imagem com versão latest"
+// Voltar versão do deployment
+kubectl rollout undo deployment nginx-deployment --to-revision=2
+// Deletar deployment
+kubectl delete deployment nginx-deployment
+// Deletar via arquivo
+kubectl delete -f 4_replicaset_deployment/portal-noticias-replicaset.yaml

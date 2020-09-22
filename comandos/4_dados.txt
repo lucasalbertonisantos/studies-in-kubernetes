@@ -1,0 +1,8 @@
+// Criar um pv (persistent volume)
+kubectl apply -f 5_dados/pv.yaml
+// Listar os pvs
+kubectl get pv
+// Criar um pvc (persistent volume claim)
+kubectl apply -f 5_dados/pvc.yaml
+// Listas os pvcs
+kubectl get pvc

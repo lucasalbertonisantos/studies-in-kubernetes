@@ -25,7 +25,9 @@ kubectl apply -f ./primeiro-pod.yaml
 kubectl delete pod nginx-pod
 // Excluir um pod pelo arquivo
 kubectl delete -f ./primeiro-pod.yaml
-// Executar comandos no pod (igual é possível fazer no docker com docker exec
+// Executar comandos no pod (igual é possível fazer no docker com docker exec)
 kubectl exec -it portal-noticias -- bash
 // Deletar todos os pods
 kubectl delete pods --all
+// Executar comandos no pod em um container específico
+kubectl exec -it pod-volume --container nginx-container -- bash
