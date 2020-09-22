@@ -13,3 +13,7 @@ kubectl get svc
 // Com o LoadBalancer já é usado o balanceador padrão do cloud provider (exemplo google cloud platform).
 // Deletar todos serviços
 kubectl delete svc --all
+// Criar confimap ao invés de variáveis de ambiente direto no pod
+kubectl apply -f kubectl apply -f 3_projeto/db-configmap.yaml
+// Buscar os configmaps
+kubectl get configmaps
