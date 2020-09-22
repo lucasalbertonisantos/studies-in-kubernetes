@@ -1,0 +1,13 @@
+// Verificar os pods com o ip, de maneira "wide", ou seja, "larga"
+kubectl get pods -o wide
+// Para comunicação entre pods, o Kubernetes tem o serviço "service", ou como é conhecido "svc"
+// O serviço de ClusterIP só funciona dentro do cluster
+// Adicionar service
+kubectl apply -f 2_expondo_pods_services/svc-pod-2.yaml
+// Verificar services rodando
+kubectl get service
+kubectl get svc
+// Se a porta que o service escutar for diferente da porta que ele deve consumir deve-se definir o port e o targetPort, caso contrário só precisa de port
+// NodePort abre a comunicação para o mundo exterior
+// Para definir um NodePort é possível usar um valor entre 30000 e 32767
+// Com o LoadBalancer já é usado o balanceador padrão do cloud provider (exemplo google cloud platform).
