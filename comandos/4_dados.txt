@@ -6,3 +6,7 @@ kubectl get pv
 kubectl apply -f 5_dados/pvc.yaml
 // Listas os pvcs
 kubectl get pvc
+// Criar um sc (storage class)
+kubectl apply -f 5_dados/sc.yaml
+// Listar scs
+kubectl get sc

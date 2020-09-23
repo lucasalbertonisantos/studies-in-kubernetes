@@ -1,0 +1,6 @@
+// Liveness probe tem a capacidade de validar se o pod esta saudável, isso é, se o health check falhar a quantidade de vezes definido o pod será substituído.
+// Readiness probe tem a capacidade de remover o pod do balanceamento, isso é, se o health check falhar ele será retirado de carga a quantidade de vezes definida
+// Liberar as metricas do minikube
+sudo minikube addons enable metrics-server
+// Listar funcionalidades adicionais do minikube
+sudo minikube addons list
